@@ -1,12 +1,17 @@
 import {ModuleWithProviders, NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-export const isBlank = (obj: any) => obj === undefined || obj === null;
+import { RouterModule } from '@angular/router';
+import { TodoComponent } from './todo-add.component';
 
 @NgModule({
-    declarations: [],
+    declarations: [TodoComponent],
     exports: [],
-    imports: [CommonModule]
+    imports: [
+      CommonModule,
+      RouterModule.forChild([
+          { path: '', component: TodoComponent }
+        ])
+    ]
 })
 export class ChipIonicModule {
     static forRoot(): ModuleWithProviders {
