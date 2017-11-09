@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "experimentalDecorators": true,
+    "module": "es2015",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "declaration": true,
+    "stripInternal": true,
+    "noEmitHelpers": true,
+    "outDir": "./dist",
+    "rootDir": "./modules",
+    "skipLibCheck": true,
+    "types": [
+      "zone.js",
+      "@types/chai",
+      "@types/meteor",
+      "@types/lodash"
+    ]
+  },
+  "files": [
+    "modules/index.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compileOnSave": false,
+  "atom": {
+    "rewriteTsconfig": false
+  }
+}

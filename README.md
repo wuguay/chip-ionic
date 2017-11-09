@@ -1,2 +1,2 @@
-# chip-ionic
-Chip Ionic Starter
+# bomip-core
+Bomip Core

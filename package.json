@@ -1,0 +1,70 @@
+{
+  "name": "@chip/ionic",
+  "version": "0.1.0",
+  "private": false,
+  "author": "Bomip Inc",
+  "license": "MIT",
+  "keywords": [
+    "chip",
+    "ionic",
+    "starter"
+  ],
+  "bugs": {
+    "url": "https://github.com/wuguay/chip-ionic/issues"
+  },
+  "main": "dist/bundles/index.umd.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "homepage": "",
+  "description": "Chip Ionic foundational building blocks",
+  "scripts": {
+    "changelog": "$(npm bin)/conventional-changelog -p chip-ionic -i CHANGELOG.md -s -r 0",
+    "docs": "./generate-docs.sh",
+    "prebuild": "npm run lint",
+    "build": "npm run build-only && npm run bundle && npm run docs",
+    "prepublish": "npm run build",
+    "build-only": "tsc || echo not ok",
+    "pretest": "cd tests && rm -rf node_modules && npm install",
+    "test-ci": "npm run pretest && cd tests && meteor test --once --driver-package dispatch:mocha-phantomjs",
+    "test:unit": "cd tests && meteor test --port 3005 --once --driver-package=dispatch:mocha-phantomjs",
+    "test:app": "cd tests && meteor test --port 3005 --full-app --once --driver-package=dispatch:mocha-phantomjs",
+    "test": "npm run test:unit && npm run test:app",
+    "lint": "tslint --type-check -p ./tsconfig.json modules/**/*.ts",
+    "bundle": "rollup -i ./dist/index.js -o ./dist/bundles/index.umd.js -n chip.ionic -c rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuguay/chip-ionic.git"
+  },
+  "devDependencies": {
+    "@angular/common": "^5.0.0",
+    "@angular/compiler": "^5.0.0",
+    "@angular/compiler-cli": "^5.0.0",
+    "@angular/core": "^5.0.0",
+    "@types/chai": "4.0.4",
+    "@types/lodash": "^4.14.66",
+    "@types/meteor": "1.4.6",
+    "@types/mocha": "2.2.43",
+    "conventional-changelog": "1.1.0",
+    "conventional-changelog-cli": "1.2.0",
+    "jsdoc-to-markdown": "3.0.0",
+    "lodash": "^4.17.4",
+    "meteor-node-stubs": "^0.3.2",
+    "meteor-rxjs": "^0.4.8",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rxjs": "^5.5.2",
+    "tslint": "5.7.0",
+    "typescript": "2.5.2",
+    "zone.js": "^0.8.16"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "rxjs"
+    ]
+  },
+  "dependencies": {
+    "@bomip/ionic": "git+https://github.com/wuguay/bomip-ionic.git"
+  }
+}
