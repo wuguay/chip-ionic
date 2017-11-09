@@ -1,25 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-export var isBlank = function (obj) { return obj === undefined || obj === null; };
-var BomipCoreModule = /** @class */ (function () {
-    function BomipCoreModule() {
+import { RouterModule } from '@angular/router';
+import { TodoComponent } from './todo-add.component';
+var ChipIonicModule = /** @class */ (function () {
+    function ChipIonicModule() {
     }
-    BomipCoreModule_1 = BomipCoreModule;
-    BomipCoreModule.forRoot = function () {
+    ChipIonicModule_1 = ChipIonicModule;
+    ChipIonicModule.forRoot = function () {
         return {
-            ngModule: BomipCoreModule_1,
+            ngModule: ChipIonicModule_1,
             providers: []
         };
     };
-    BomipCoreModule = BomipCoreModule_1 = __decorate([
+    ChipIonicModule = ChipIonicModule_1 = __decorate([
         NgModule({
-            declarations: [],
+            declarations: [TodoComponent],
             exports: [],
-            imports: [CommonModule]
+            imports: [
+                CommonModule,
+                RouterModule.forChild([
+                    { path: '', component: TodoComponent }
+                ])
+            ]
         })
-    ], BomipCoreModule);
-    return BomipCoreModule;
-    var BomipCoreModule_1;
+    ], ChipIonicModule);
+    return ChipIonicModule;
+    var ChipIonicModule_1;
 }());
-export { BomipCoreModule };
+export { ChipIonicModule };
 //# sourceMappingURL=chip-ionic.module.js.map
