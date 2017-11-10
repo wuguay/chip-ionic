@@ -43,6 +43,7 @@ var ChipIonicModule = /** @class */ (function () {
 }());
 
 exports.ChipIonicModule = ChipIonicModule;
+exports.TodoComponent = TodoComponent;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
