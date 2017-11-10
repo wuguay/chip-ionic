@@ -13,7 +13,7 @@ var AppComponent = /** @class */ (function () {
     AppComponent = __decorate([
         core.Component({
             selector: 'app',
-            template: "<app></app>"
+            template: "<app>App</app>"
         }),
         __metadata("design:paramtypes", [])
     ], AppComponent);

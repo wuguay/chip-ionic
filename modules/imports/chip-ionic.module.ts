@@ -33,7 +33,7 @@ const IONIC_PROVIDERS: any[] = [
   declarations: [AppComponent, ...COMPONENTS],
   entryComponents: [AppComponent, ...ENTRY_COMPONENTS],
   imports: [
-    CommonModule,
+    BrowserModule,
     BomipCoreModule.forRoot(),
     IonicModule.forRoot(AppComponent)
   ],
