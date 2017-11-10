@@ -10,7 +10,7 @@ export const homePage = 'ChipHomePage';
 
 @Component({
     selector: 'app',
-    template: `<app></app>`
+    template: `<app>App</app>`
 })
 export class AppComponent {
     constructor() {
