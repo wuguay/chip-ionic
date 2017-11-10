@@ -4,18 +4,56 @@
 	(factory((global.chip = global.chip || {}, global.chip.ionic = {}),global.core,global.platformBrowser,global.core$1,global.ionicAngular));
 }(this, (function (exports,core,platformBrowser,core$1,ionicAngular) { 'use strict';
 
+var BlankPage = /** @class */ (function () {
+    function BlankPage() {
+    }
+    BlankPage = __decorate([
+        core.Component({
+            selector: 'ui-blank',
+            template: "<p>Blank</p>"
+        }),
+        __metadata("design:paramtypes", [])
+    ], BlankPage);
+    return BlankPage;
+}());
+
+// import {SplashScreen} from '@ionic-native/splash-screen';
+// import {StatusBar} from '@ionic-native/status-bar';
 var fp = require('lodash/fp');
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(platform, app) {
+        this.platform = platform;
+        this.app = app;
         console.log('AppComponent');
     }
+    AppComponent.prototype.ngAfterViewInit = function () {
+        var _this = this;
+        this.nav && this.nav.push(BlankPage);
+        this.platform.ready().then(function () {
+            if (_this.platform.is('cordova')) {
+                // statusBar.styleDefault();
+                // splashScreen.hide();
+            }
+            //Navigate to Tests
+            // this.nav.push(TestsComponent);
+        });
+        // console.log('deep link');
+    };
+    AppComponent.prototype.ngOnDestroy = function () {
+        // dismiss(this);
+    };
+    __decorate([
+        core.ViewChild('nav'),
+        __metadata("design:type", ionicAngular.Nav)
+    ], AppComponent.prototype, "nav", void 0);
     AppComponent = __decorate([
         core.Component({
             selector: 'app',
-            template: "<app>App</app>"
+            template: "<ion-nav #nav id=\"nav\" swipe-back-enabled=\"false\"></ion-nav>"
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [ionicAngular.Platform,
+            ionicAngular.App])
     ], AppComponent);
     return AppComponent;
 }());
@@ -30,19 +68,6 @@ var TodoComponent = /** @class */ (function () {
         })
     ], TodoComponent);
     return TodoComponent;
-}());
-
-var BlankPage = /** @class */ (function () {
-    function BlankPage() {
-    }
-    BlankPage = __decorate([
-        core.Component({
-            selector: 'ui-blank',
-            template: "<p>Blank</p>"
-        }),
-        __metadata("design:paramtypes", [])
-    ], BlankPage);
-    return BlankPage;
 }());
 
 var COMPONENTS = [
