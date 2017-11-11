@@ -74,6 +74,48 @@ var TodoComponent = /** @class */ (function () {
     return TodoComponent;
 }());
 
+var LoginPage = /** @class */ (function () {
+    function LoginPage(navCtrl) {
+        this.navCtrl = navCtrl;
+        // The account fields for the login form.
+        // If you're using the username field with or without email, make
+        // sure to add it to the type
+        this.account = {
+            email: 'test@example.com',
+            password: 'test'
+        };
+        console.log('LoginPage');
+    }
+    LoginPage = __decorate([
+        ionicAngular.IonicPage(),
+        core.Component({
+            selector: 'page-login',
+            templateUrl: 'login.html'
+        }),
+        __metadata("design:paramtypes", [ionicAngular.NavController])
+    ], LoginPage);
+    return LoginPage;
+}());
+
+var LoginPageModule = /** @class */ (function () {
+    function LoginPageModule() {
+    }
+    LoginPageModule = __decorate([
+        core.NgModule({
+            declarations: [
+                LoginPage,
+            ],
+            imports: [
+                ionicAngular.IonicPageModule.forChild(LoginPage)
+            ],
+            exports: [
+                LoginPage
+            ]
+        })
+    ], LoginPageModule);
+    return LoginPageModule;
+}());
+
 var COMPONENTS = [
     BlankPage, TodoComponent
 ];
@@ -105,6 +147,7 @@ var ChipIonicModule = /** @class */ (function () {
             entryComponents: [AppComponent].concat(ENTRY_COMPONENTS),
             imports: [
                 platformBrowser.BrowserModule,
+                LoginPageModule,
                 core$1.BomipCoreModule.forRoot(),
                 ionicAngular.IonicModule.forRoot(AppComponent)
             ],

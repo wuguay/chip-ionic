@@ -5,6 +5,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { AppComponent } from './app/mobile.app';
 import { TodoComponent } from './todo-add.component';
 import { BlankPage } from './pages/blank.page';
+import { LoginPageModule } from './pages/login/login.module';
 var COMPONENTS = [
     BlankPage, TodoComponent
 ];
@@ -36,6 +37,7 @@ var ChipIonicModule = /** @class */ (function () {
             entryComponents: [AppComponent].concat(ENTRY_COMPONENTS),
             imports: [
                 BrowserModule,
+                LoginPageModule,
                 BomipCoreModule.forRoot(),
                 IonicModule.forRoot(AppComponent)
             ],
