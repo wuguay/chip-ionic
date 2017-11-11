@@ -1,3 +1,6 @@
+import { NavController } from 'ionic-angular';
 export declare class BlankPage {
-    constructor();
+    private nav;
+    constructor(nav: NavController);
+    openPage(): void;
 }

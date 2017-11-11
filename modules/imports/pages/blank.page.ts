@@ -1,12 +1,19 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 
 @Component({
-    selector: 'ui-blank',
-    template: `<p>Blank</p>`
+  selector: 'ui-blank',
+  template: `<p>Blank</p>
+    <button ion-item (click)="openPage()">
+      Login
+    </button>
+    `
 })
 export class BlankPage {
+  constructor(private nav: NavController) {
+  }
 
-    constructor() {
-    }
-
+  openPage() {
+    this.nav.push('LoginPage');
+  }
 }

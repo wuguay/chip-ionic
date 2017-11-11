@@ -1,18 +1,22 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/platform-browser'), require('@bomip/core'), require('ionic-angular')) :
 	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@angular/platform-browser', '@bomip/core', 'ionic-angular'], factory) :
-	(factory((global.chip = global.chip || {}, global.chip.ionic = {}),global.core,global.platformBrowser,global.core$1,global.ionicAngular));
+	(factory((global.chip = global.chip || {}, global.chip.ionic = {}),global.ng_core,global.ng_browser,global.bp_core,global.ionicAngular));
 }(this, (function (exports,core,platformBrowser,core$1,ionicAngular) { 'use strict';
 
 var BlankPage = /** @class */ (function () {
-    function BlankPage() {
+    function BlankPage(nav) {
+        this.nav = nav;
     }
+    BlankPage.prototype.openPage = function () {
+        this.nav.push('LoginPage');
+    };
     BlankPage = __decorate([
         core.Component({
             selector: 'ui-blank',
-            template: "<p>Blank</p>"
+            template: "<p>Blank</p>\n    <button ion-item (click)=\"openPage()\">\n      Login\n    </button>\n    "
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [ionicAngular.NavController])
     ], BlankPage);
     return BlankPage;
 }());
