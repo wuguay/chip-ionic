@@ -4,7 +4,17 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html'
+  template: `
+  <ion-header>
+    <ion-navbar>
+      <ion-title>Login</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content>
+    <p>Login</p>
+  </ion-content>
+  `
 })
 export class LoginPage {
   // The account fields for the login form.
@@ -20,7 +30,6 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController) {
     console.log('LoginPage')
-
   }
 
   // Attempt to login in through our User service

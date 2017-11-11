@@ -19,6 +19,7 @@ export default {
     '@angular/core': 'ng_core',
     '@angular/platform-browser': 'ng_browser',
     '@bomip/core': 'bp_core',
+    'ionic-angular': 'ionic',
     'lodash': 'lo',
     'lodash/fp': 'fp',
     'meteor-rxjs': 'mrxjs',

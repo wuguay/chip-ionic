@@ -16,7 +16,7 @@ var LoginPage = /** @class */ (function () {
         IonicPage(),
         Component({
             selector: 'page-login',
-            templateUrl: 'login.html'
+            template: "\n  <ion-header>\n    <ion-navbar>\n      <ion-title>Login</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n  <ion-content>\n    <p>Login</p>\n  </ion-content>\n  "
         }),
         __metadata("design:paramtypes", [NavController])
     ], LoginPage);

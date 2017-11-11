@@ -49,13 +49,3 @@ export class ChipIonicModule {
     };
   }
 }
-
-// declarations: [TodoComponent],
-// exports: [],
-// imports: [
-//   CommonModule,
-//   BomipCoreModule,
-//   RouterModule.forChild([
-//       { path: '', component: TodoComponent }
-//     ])
-// ]

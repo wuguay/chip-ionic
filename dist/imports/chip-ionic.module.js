@@ -48,13 +48,4 @@ var ChipIonicModule = /** @class */ (function () {
     var ChipIonicModule_1;
 }());
 export { ChipIonicModule };
-// declarations: [TodoComponent],
-// exports: [],
-// imports: [
-//   CommonModule,
-//   BomipCoreModule,
-//   RouterModule.forChild([
-//       { path: '', component: TodoComponent }
-//     ])
-// ]
 //# sourceMappingURL=chip-ionic.module.js.map

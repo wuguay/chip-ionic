@@ -1,7 +1,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/platform-browser'), require('@bomip/core'), require('ionic-angular')) :
 	typeof define === 'function' && define.amd ? define(['exports', '@angular/core', '@angular/platform-browser', '@bomip/core', 'ionic-angular'], factory) :
-	(factory((global.chip = global.chip || {}, global.chip.ionic = {}),global.ng_core,global.ng_browser,global.bp_core,global.ionicAngular));
+	(factory((global.chip = global.chip || {}, global.chip.ionic = {}),global.ng_core,global.ng_browser,global.bp_core,global.ionic));
 }(this, (function (exports,core,platformBrowser,core$1,ionicAngular) { 'use strict';
 
 var BlankPage = /** @class */ (function () {
@@ -90,7 +90,7 @@ var LoginPage = /** @class */ (function () {
         ionicAngular.IonicPage(),
         core.Component({
             selector: 'page-login',
-            templateUrl: 'login.html'
+            template: "\n  <ion-header>\n    <ion-navbar>\n      <ion-title>Login</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n  <ion-content>\n    <p>Login</p>\n  </ion-content>\n  "
         }),
         __metadata("design:paramtypes", [ionicAngular.NavController])
     ], LoginPage);
@@ -157,16 +157,6 @@ var ChipIonicModule = /** @class */ (function () {
     return ChipIonicModule;
     var ChipIonicModule_1;
 }());
-
-// declarations: [TodoComponent],
-// exports: [],
-// imports: [
-//   CommonModule,
-//   BomipCoreModule,
-//   RouterModule.forChild([
-//       { path: '', component: TodoComponent }
-//     ])
-// ]
 
 exports.ChipIonicModule = ChipIonicModule;
 exports.TodoComponent = TodoComponent;
